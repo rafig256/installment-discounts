@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+    <title>محاسبه گر هزینه</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../images/rafig.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        #loading
+        {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="body">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card card-body text-center mt-5">
+                <div class="col-12">
+                    <div class="navbar row">
+                        <ul class="menu">
+                            <li>
+                                <a href="https://rafig.ir" target="_blank">سایت اصلی</a>
+                            </li>
+                            <li>
+                                <a href="https://rafig256.ir/blog-single.php?id=10" target="_blank">انواع سایت</a>
+                            </li>
+                            <li>
+                                <a href="#">آشنایی با ما</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="heading display-5 pb-3">فرم محاسبه هزینه خدمات</h3>
+                <form id="invoice-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <select name="siteProduct" class="form-control" id="siteProduct" onchange="changeSelect(this)">
+                                <option >نوع محصول رو انتخاب کن</option>
+                                <option value="1">سایت تک صفحه شخصی</option>
+                                <option value="2">سایت پورتال (معرفی شخص یا شرکت)</option>
+                                <option selected value="3">سایت فروشگاهی با پرداخت آنلاین</option>
+                                <option value="4">برنامه نویسی اختصاصی</option>
+                                <option value="5">سیستم مدریت آموزشگاه علمی نامحدود</option>
+                                <option value="6">سیستم مدریت آموزشگاه علمی 500 نفره</option>
+                                <option value="7">سیستم مدریت آموزشگاه علمی 200 نفره</option>
+                                <option value="8">سیستم مدریت آموزشگاه علمی 100 نفره</option>
+                                <option value="9">سیستم مدریت آموزشگاه علمی 50 نفره</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <div class="label_show">
+                                <label for="cost">مبلغ محصول</label>: <span id="toman"></span>
+                            </div>
+                            <input type="number" class="form-control" id="cost" value="120000000" name="cost" disabled>
+                        </div>
+                        <label for="prepayment">پیش پرداخت</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">تومان</span>
+                            <input type="number" class="form-control" id="prepayment" value="400000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prepayment">تعداد اقساط دلخواه شما</label>
+                        <div class="input-group">
+                            <input type="number" max="9" min="0" class="form-control" id="count" value="0">
+                        </div>
+                    </div>
+                    <div class="forn-group">
+                        <input type="submit" value="محاسبه کن" class="btn btn-dark btn-block">
+                    </div>
+                </form>
+
+                <div class="loader" id="loading">
+                    <img src="../images/loading.gif" alt='loading'>
+                </div>
+
+                <!-- RESULTS -->
+                <div id="شرایط پرداخت" class="pt-4">
+                    <h5>شرایط پرداخت</h5>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="resPrepayment" disabled>
+                            <span class="input-group-addon">پیش پرداخت</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="perMonth" disabled>
+                            <span class="input-group-addon">مبلغ اقساط ماهانه</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="total-payment" disabled>
+                            <span class="input-group-addon">جمع پرداختی</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="profit" disabled>
+                            <span class="input-group-addon">سود شما</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discount">تخفیف شما</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">%</span>
+                            <input type="number" class="form-control" id="discount" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+
+</html>
