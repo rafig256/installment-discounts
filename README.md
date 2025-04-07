@@ -17,6 +17,11 @@ This system is ideal for sellers who want to balance **payment flexibility** and
 
 > I originally built this system for my own business, but I realized it could be helpful for others too — so I'm sharing it as an open-source project.
 
+## 🔗 Live Demo
+
+You can try the live demo here:  
+👉 [https://rafig.ir/invoice/](https://rafig.ir/invoice/)
+
 ---
 
 ## فارسی
@@ -43,3 +48,8 @@ This system is ideal for sellers who want to balance **payment flexibility** and
 1. Clone the repository:
    ```bash
    git clone https://github.com/rafig256/installment-discounts.git
+
+## 🔗 نسخه‌ی نمایشی آنلاین
+
+می‌توانید نسخه‌ی نمایشی را اینجا مشاهده کنید:  
+👉 [https://rafig.ir/invoice/](https://rafig.ir/invoice/)
