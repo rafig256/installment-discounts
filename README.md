@@ -22,6 +22,11 @@ This system is ideal for sellers who want to balance **payment flexibility** and
 You can try the live demo here:  
 👉 [https://rafig.ir/invoice/](https://rafig.ir/invoice/)
 
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
 ---
 
 ## فارسی
@@ -53,3 +58,7 @@ You can try the live demo here:
 
 می‌توانید نسخه‌ی نمایشی را اینجا مشاهده کنید:  
 👉 [https://rafig.ir/invoice/](https://rafig.ir/invoice/)
+
+## 📄 مجوز
+
+این پروژه تحت مجوز MIT منتشر شده است. برای اطلاعات بیشتر فایل [LICENSE](LICENSE) را ببینید.
