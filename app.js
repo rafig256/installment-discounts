@@ -23,13 +23,13 @@ function changeSelect(sel){
         case '5':
             cost = 33000000; maxCount = 9;break;
         case '6':
-            cost = 28000000; maxCount = 8;break;
+            cost = 28000000; maxCount = 7;break;
         case '7':
-            cost = 22000000; maxCount = 7;break;
+            cost = 22000000; maxCount = 5;break;
         case '8':
-            cost = 15000000; maxCount = 6;break;
+            cost = 15000000; maxCount = 3;break;
         case '9':
-            cost = 8000000; maxCount = 5;break;
+            cost = 8000000; maxCount = 1;break;
         default:
             cost = 0;
     }
@@ -71,7 +71,9 @@ function calculateResults() {
         return false;
     }
     //condition for count tax
-    let discount = Math.round(Math.sqrt(621-69*count)); // محاسبه میزان تخفیف
+    // let discount = Math.round(Math.sqrt(621-69*count)); // محاسبه میزان تخفیف
+    let h = maxCount;
+    let discount = Math.round((2.5 * h + 7.5)/(h * h) * (count - h)*(count -h)) // محاسبه میزان تخفیف
     document.getElementById('discount').value = discount;
     
     console.log('درصد تخفیف = ' + discount);
